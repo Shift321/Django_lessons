@@ -1,0 +1,12 @@
+{%extends "layout/basic.html"%}
+
+{%block content%}
+{%for bb in bbs%}
+<div>
+    <h2>{{bb.title}}</h2>
+    <p>{{bb.content}}</p>
+    <p>{{bb.price}}</p>
+    <p><a href="{%url 'by_rubric' bb.rubric.pk%}">{{bb.rubric.name}} </a><a href="delete/{{bb.id}}">| Удалить</a></p>
+</div>
+{%endfor%}
+{%endblock%}
