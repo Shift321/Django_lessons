@@ -40,6 +40,4 @@ def deletebb(request,id):
         bb.delete()
         return HttpResponseRedirect("/bboard")
     except Bb.DoesNotExist:
-        return HttpResponseNotFound("<h2>Not found</h2>")
-
-            
+        return HttpResponseNotFound("<h2>Not found</h2>")    
