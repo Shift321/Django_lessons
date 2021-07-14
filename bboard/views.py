@@ -4,6 +4,8 @@ from django.shortcuts import render
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 
+
+
 from .models import Bb, Rubric
 from .forms import BbForm
 
@@ -39,3 +41,5 @@ def deletebb(request,id):
         return HttpResponseRedirect("/bboard")
     except Bb.DoesNotExist:
         return HttpResponseNotFound("<h2>Not found</h2>")
+
+            
