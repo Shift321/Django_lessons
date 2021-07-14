@@ -1,8 +1,10 @@
 from django.http import HttpResponse
 from django.http.response import HttpResponseNotFound, HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render,redirect
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
+
+
 
 from .models import Bb, Rubric
 from .forms import BbForm
@@ -36,6 +38,6 @@ def deletebb(request,id):
     try:
         bb = Bb.objects.get(id=id)
         bb.delete()
-        return HttpResponseRedirect("/bboard")
+        return redirect("/bboard")
     except Bb.DoesNotExist:
-        return HttpResponseNotFound("<h2>Not found</h2>")
+        return get_object_or_404

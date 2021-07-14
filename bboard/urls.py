@@ -8,4 +8,5 @@ urlpatterns = [
     path('',index,name='index'),
     path('add/',BbCreateView.as_view(),name='add'),
     path('delete/<int:id>',deletebb,name='delete'),
+
 ]
